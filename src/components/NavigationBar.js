@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
-import { Router } from 'react-router-dom';
 
 const Styles = styled.div`
     .navbar {
         background-color: #222;
     }
 
-    .navbar-brand, navbar-nav .nav-Router {
-        color: #fff;
+    a, .navbar-brand, navbar-nav .nav-Link {
+        color: #bbb;
 
         &:hover {
             color: white;
@@ -17,7 +17,7 @@ const Styles = styled.div`
     }
 `;
 
-export const NavBar = () => (
+export const NavigationBar = () => (
     <Styles>
         <Navbar expand="lg">
             <Navbar.Brand href="/">Code Life</Navbar.Brand>
@@ -25,19 +25,19 @@ export const NavBar = () => (
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <Nav.Item>
-                        <Nav.Router>
-                            <Router to="/">Home</Router>
-                        </Nav.Router>
+                        <Nav.Link>
+                            <Link to="/">Home</Link>
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Router>
-                            <Router to="/about">Sobre</Router>
-                        </Nav.Router>
+                        <Nav.Link>
+                            <Link to="/about">Sobre</Link>
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Router>
-                            <Router to="/contact">Entre em contato!</Router>
-                        </Nav.Router>
+                        <Nav.Link>
+                            <Link to="/contact">Entre em contato!</Link>
+                        </Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Navbar.Collapse>
